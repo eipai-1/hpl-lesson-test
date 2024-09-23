@@ -1,0 +1,39 @@
+server:
+  port: 9096
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB     #单个文件的大小限制
+      max-request-size: 50MB  #单次请求的大小限制
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.88.128:3306/xcplus_media?serverTimezone=UTC&userUnicode=true&useSSL=false&
+    username: root
+    password: 1234
+
+minio:
+  endpoint: http://192.168.88.128:9000
+  accessKey: minioadmin
+  secretKey: minio1234
+  bucket:
+    files: xuecheng-mediafiles
+    videofiles: xuecheng-video
+
+# todo
+#xxl:
+#  job:
+#    admin:
+#      addresses: http://192.168.88.128:9999/xxl-job-admin
+#    executor:
+#      appname: media-process-service
+#      address:
+#      ip:
+#      port: 8081
+#      logpath: /data/applogs/xxl-job/jobhandler
+#      logretentiondays: 30
+#    accessToken: default_token
+#
+#videoprocess:
+#  ffmpegpath: D:/Desktop/xuecheng-online/ffmpeg/ffmpeg.exe

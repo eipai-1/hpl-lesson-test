@@ -1,0 +1,35 @@
+server:
+  port: 9092
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.88.128:3306/hpl_lesson_content?serverTimezone=UTC&userUnicode=true&useSSL=false&
+    username: root
+    password: 1234
+
+  data:
+    redis:
+      host: 192.168.88.128
+      port: 6379
+      database: 1
+      timeout: 10000
+      lettuce:
+        pool:
+          max-active: 20
+          max-idle: 10
+          min-idle: 0
+
+#          暂时不开启分布式任务
+#xxl:
+#  job:
+#    admin:
+#      addresses: http://192.168.88.128:9999/xxl-job-admin
+#    executor:
+#      appname: coursepublish-job
+#      address:
+#      ip:
+#      port: 8999
+#      logpath: /data/applogs/xxl-job/jobhandler
+#      logretentiondays: 30
+#    accessToken: default_token
